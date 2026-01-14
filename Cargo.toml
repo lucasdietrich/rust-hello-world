@@ -1,5 +1,9 @@
 [package]
+edition = "2024"
 
 name = "rust-hello-world"
 version = "0.0.1"
 authors = ["Cody P Schafer <dev@codyps.com>"]
+
+[dependencies]
+rmp = "0.8.15"
