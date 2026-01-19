@@ -1,4 +1,8 @@
 fn main() {
+    let hello = ws_hello::hello();
+    let world = ws_world::world();
+    println!("{} {}!", hello, world);
+
     let mut bufs = vec![vec![]; 5];
 
     rmp::encode::write_pfix(&mut bufs[0], 42).unwrap();
