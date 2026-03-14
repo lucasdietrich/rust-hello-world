@@ -1,14 +1,23 @@
 [package]
 edition = "2024"
+description = "A simple example of rust using cargo to build (this is just the output of `cargo new`). Created to demonstrate meta-rust"
+homepage = "https://github.com/lucasdietrich/rust-hello-world/tree/dependency-workspace"
 
 name = "rust-hello-world"
 version = "0.0.1"
 authors = ["Cody P Schafer <dev@codyps.com>"]
 
+[features]
+default = []
+
+mylib = ["dep:mylib"]
+
 [dependencies]
 rmp = "0.8.15"
 ws-hello = { git = "https://github.com/lucasdietrich/rust-hello-world-workspace.git", rev = "a63ad47f5a7714d8a1259812bf2e44b821d3cb27"}
 ws-world = { git = "https://github.com/lucasdietrich/rust-hello-world-workspace.git", rev = "a63ad47f5a7714d8a1259812bf2e44b821d3cb27"}
+# mylib = { path = "/home/lucas/yocto/mp1/mylib", optional = true }
+mylib = { git = "https://github.com/lucasdietrich/rust-hello-world-lib.git", rev = "e6553d4251759fbcdad543d9b1d59d3c32126a9c", optional = true }
 
 [profile.release]
 lto = true
